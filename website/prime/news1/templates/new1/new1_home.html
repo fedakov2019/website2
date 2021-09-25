@@ -1,0 +1,34 @@
+{% extends 'main/lauot.html' %}
+{% block content1 %}
+                   <li class="list-group-item" ><i class="fas fa-home"></i><a href="{% url 'home' %}">  Главная</a> </li>
+                   <li class="list-group-item"><a href="{% url 'about' %}"> О нас </a></li>
+                   <li class="list-group-item active"><a href="{% url 'news_home' %}"> Report </a></li>
+                   <li class="list-group-item active"><a href="{% url 'news1_home' %}"> Новости на сайте </a></li>
+{% endblock%}
+{% block content %}
+<h1> Новости на сайте</h1>
+{% for el in news %}
+<div class="alert alert-warning">
+
+    <h3> {{el.title}}</h3>
+    <p>{{el.anons}}</p>
+    <a href="{% url 'news-detail' el.id %}" class="btn btn-warning">Читать детальнее</a>
+</div>
+{% endfor %}
+<h1>Еще вывод</h1>
+{% for el1 in row %}
+<div class="alert alert-warning">
+
+    <h3> {{el1.title}}</h3>
+    <p>{{el1.anons}}</p>
+    <p>{{el1.date1}}</p>
+</div>
+{% endfor %}
+
+{% endblock %}
+{% block title %}
+Новости на сайте
+
+
+
+ {% endblock %}

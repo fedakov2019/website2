@@ -1,0 +1,181 @@
+
+p {
+	margin: 20px 0;
+}
+
+.form-control {
+	box-shadow: none;
+}
+
+.btn {
+	font-family: @brand-font;
+}
+.custom{
+ background: #182E49;
+}
+.navbar-brand{
+margin-right:50px;
+}
+  #navbar-example{
+background:#73d1fa;
+
+}
+
+.alert-warning{
+float:left;
+clear:both;
+width:400px;
+text-align:left;
+margin:20px 34%
+}
+.navbar-collapse{
+background:#73d1fa;
+}
+nav {
+background:#73d1fa;
+
+}
+
+.navbar-nav {width:30%;}
+.navbar-nav li:hover{
+background-color:blue;
+
+
+
+}
+.navbar-nav li{
+margin-right:10px;
+padding-right:60px;
+background:#b1abf7;
+                    border-radius:20px 20%;
+                    opacity:0.9;
+}
+.nav-item .active{
+background:blue;
+}
+.navbar-brand img { width:100px; border: none;
+
+ }
+ .breadcrumb {background:#b1abf7;}
+
+ .list-group-item {background:#b1abf7;
+                    border-radius:20px 50%;
+                    opacity:0.7;
+                    margin-top:2px;
+                    margin-bottom:2px;}
+
+ .list-group-item a  {
+   color:#090721;
+ }
+ form {
+ width:500px;
+ margin-left:12%;
+ margin-top:50px;
+ }
+ .qw  {width:100%;
+ margin:auto;
+ text-align: center;}
+
+ .list-group-item:hover a  {
+   color:#f578d1;
+ }
+.custom li a{
+ color: #fff;
+ font-weight: bold;
+}
+.hed {
+ background:#a1a0a8;
+}
+
+
+body {
+width:100%;
+height:100%;
+border-top: 5px solid #7e7e7e;
+	background-color : #73d1fa;
+
+	.wrapper {
+		padding: 0 0 50px 0;
+		   .navbar a {
+			    text-transform: uppercase;
+			    font: 14px @brand-font;
+			    }
+
+			.heading {
+			        height: 40px;
+			        background: #a1a0a8;
+			        margin: 30px 0;
+			        padding-left: 20px;
+
+			   h1 {
+				display: inline-block;
+				color: #7e7e7e;
+				font: normal 40px/40px 'Oswald', sans-serif;
+				background: #a1a0a8;;
+				margin: 0;
+				padding: 0 10px;
+				text-transform: uppercase;
+			       }
+
+		}
+
+
+	  header {
+	  .form-search {
+				width: 200px;
+
+            		}
+		padding: 20px 0;
+	}
+
+
+	   .submenu { width: 20;
+            		margin-bottom: 30px;
+            		background-color : #e51e96;
+
+            		  li {
+                		display: list-item;
+                		font: 300 14px #eddfdf;
+		                list-style-position: inside;
+                		list-style-type: square;
+                		padding: 10px;
+                		text-transform: uppercase;
+
+                               }}
+
+
+
+
+
+
+
+        .jumbotron {
+			border-radius: 0;
+		      	padding: 0;
+			margin: 0;
+
+			blockquote {
+				border-left: none;
+
+				p {
+					font: 300 italic 33px @brand-font;
+					text-transform: uppercase;
+					margin-bottom: 0;
+				}
+
+				small {
+					text-align: right;
+					color: #1D8EA6;
+					font: 300 20px @brand-font;
+
+					&:before {
+						content: '';
+					}
+
+
+
+                          }
+                }
+        }
+       }
+       }
