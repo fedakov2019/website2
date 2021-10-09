@@ -1,13 +1,14 @@
 from django.forms import formset_factory
 from django.shortcuts import render,redirect
-from .form1 import spisok1
+from .form1 import CountryForm
 from .form import UserForm
 from django.db import connection
 from .pipr import report
 import numpy as np
+import asyncio
 import datetime
 from collections import namedtuple
-import pandas as pd
+import aiomysql
 def recup_wos(request):
     return render(request, "news/news_home.html")
 def namedtuplefetchall(cursor):
@@ -41,23 +42,27 @@ def othet(request):
 
                 }
     return render(request, "news/othet1.html", date2)
+
 def othet1(request, date1, date2):
 
     ret = (datetime.datetime.strptime(date1,'%d.%m.%Y').date(),datetime.datetime.strptime(date2,'%d.%m.%Y').date())
+
     with connection.cursor() as cursor:
 
         cursor.execute("SELECT  [dat] ,[ksg] FROM [test1].[dbo].[spisok] where dat between "+
                        "%s and %s", ret)
+
         row = namedtuplefetchall(cursor)
-        spisok=()
+
+        spisok=[]
         for el in row:
            spisok += (el[1],str(el[1])+' '+el[0].strftime('%d.%m.%Y')),
-        form1=spisok1(spisok)
-        form2=formset_factory(form1)
-        form3=form2()
+
+        form1=CountryForm(spisok)
+        form2=form1
         error=''
         if request.method == 'POST':
-            form = form2(request.POST)
+            form = form1(request.POST)
             if form.is_valid():
                 dat = form.cleaned_data[0].get('Countries')
                 as1=''
@@ -79,7 +84,7 @@ def othet1(request, date1, date2):
         date2 = {'d1': date1,
 
                  'd2': date2,
-                  'rew':form3,
+                  'rew':form2,
                  'error':error
                  }
 

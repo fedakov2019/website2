@@ -1,10 +1,16 @@
 from django import forms
 
 
-def spisok1(a):
-    class CountryForm(forms.Form):
-        OPTIONS=a
-        Countries = forms.MultipleChoiceField(widget=forms.CheckboxSelectMultiple,
-                                              choices=OPTIONS, label='КСГ список')
+class CountryForm(forms.Form):
+    OP = []
 
-    return CountryForm
+    def __init__(self, op, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        self.OP = op
+        self.fields['Cod']= forms.MultipleChoiceField(
+        required=True,
+        widget=forms.CheckboxSelectMultiple,
+        choices=op)
+
+
